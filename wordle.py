@@ -4,6 +4,7 @@ import sys
 
 def get_word():
     ''' Retrieves word to be guessed for game. '''
+    # TODO - implement so that randomly selected word is used instead
     return "wordl"
 
 def split(word):
@@ -57,10 +58,11 @@ class MyWordle:
         Prompts the user for a word guess until a valid entry
         is received. 
         '''
+        # TODO - add to validity check by confirming entered word is a possible word
         is_valid = False
         while not is_valid:
             print("")
-            guess = input("Guess #" + str(self.get_round_count() + 1) + ": ")
+            guess = input("Guess #" + str(self.get_round_count() + 1) + ": ").lower()
             if len(guess) == 5:
                 is_valid = True
             else:
@@ -69,7 +71,7 @@ class MyWordle:
             if guess in self.guesses:
                 is_valid = False
                 print("")
-                print("Word has already been guessed. You might want to try a different word :)")
+                print(guess + " has already been guessed. You might want to try a different word :)")
         self.guesses.append(guess)
         self.__increment_count()
         return self.__evaluate_guess(guess)
@@ -118,7 +120,6 @@ def play_wordle():
     game = MyWordle(word)
     game.play_game()
     
-
 if __name__ == '__main__':
     ''' When called from command line, calls play_wordle() function. '''
     play_wordle()
