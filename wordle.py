@@ -20,23 +20,8 @@ class MyWordle:
         self.guesses = []
         self.guesses_results = []
         self.word = word
-        self.__set_hash(word)
         self.has_won = False
         self.count = 0
-    
-    def __set_hash(self,word):
-        ''' 
-        Put word in hash table
-        Each key is a character,
-        and the corresponding value is the position
-        within the word.
-        :param string word: the correct word for the game.
-        '''
-        for index in range(0,len(word)):
-            letter = word[index]
-            if letter not in self.wordle:
-                self.wordle[letter] = []
-            self.wordle[letter].append(index)
     
     def __increment_count(self):
         ''' Increments count of guesses made. '''
@@ -55,19 +40,19 @@ class MyWordle:
         
         accuracy_list = ['-','-','-','-','-']
         word_split = split(word)
-        for letter in self.word:
-            for index in self.wordle[letter]:
-                if word[index] == letter:
-                    accuracy_list[index] = 'X'
-                    word_split[index] = '.'
-                elif letter in word_split:
-                    spot = word_split.index(letter)
-                    accuracy_list[spot] = '*'
+        for index in range(0, len(self.word)):
+            letter = self.word[index]
+            if word[index] == letter:
+                accuracy_list[index] = 'X'
+                word_split[index] = '.'
+            elif letter in word_split:
+                spot = word_split.index(letter)
+                accuracy_list[spot] = '*'
 
         response_string = "".join(accuracy_list)
         return response_string
 
-    def make_guess(self):
+    def __make_guess(self):
         '''
         Prompts the user for a word guess until a valid entry
         is received. 
@@ -102,7 +87,7 @@ class MyWordle:
     
     def play_game(self):
         while self.get_round_count() < 6 and not self.has_won:
-            guess = self.make_guess()
+            guess = self.__make_guess()
             self.guesses_results.append(guess)
             print("")
             self.__print_guesses()
