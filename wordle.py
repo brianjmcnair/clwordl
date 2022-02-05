@@ -105,7 +105,7 @@ def print_intro_message():
     ''' Prints intro message at start of game. ''' 
     print("")
     print("Rules of the game:")
-    print("- You have 6 attempts to guess the word")
+    print("- You have 6 attempts to guess the 5 letter word")
     print("- For each guess, '-' means that the letter in that spot ")
     print("  is not in the word. '*' means that the letter is in the")
     print("  word, but in a different spot. 'X' means the letter is in")
