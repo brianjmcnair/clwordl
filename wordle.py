@@ -4,7 +4,7 @@ import sys
 
 def get_word():
     ''' Retrieves word to be guessed for game. '''
-    return "wordo"
+    return "wordl"
 
 def split(word):
     ''' Splits word into list of characters. '''
