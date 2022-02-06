@@ -43,16 +43,16 @@ class MyWordle:
             self.has_won = True
             return "XXXXX"
         
-        accuracy_list = ['-','-','-','-','-']
+        accuracy_list = ['⬜️','⬜️','⬜️','⬜️','⬜️']
         word_split = split(word)
         for index in range(0, len(self.word)):
             letter = self.word[index]
             if word[index] == letter:
-                accuracy_list[index] = 'X'
+                accuracy_list[index] = '🟩'
                 word_split[index] = '.'
             elif letter in word_split:
                 spot = word_split.index(letter)
-                accuracy_list[spot] = '*'
+                accuracy_list[spot] = '🟨'
 
         response_string = "".join(accuracy_list)
         return response_string
