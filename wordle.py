@@ -41,7 +41,7 @@ class MyWordle:
         '''
         if self.word == word:
             self.has_won = True
-            return "XXXXX"
+            return "🟩🟩🟩🟩🟩"
         
         accuracy_list = ['⬜️','⬜️','⬜️','⬜️','⬜️']
         word_split = split(word)
@@ -71,6 +71,7 @@ class MyWordle:
             else:
                 print("")
                 print("Invalid word. All guesses must be exactly 5 letters long.")
+                continue
             if guess in self.guesses:
                 is_valid = False
                 print("")
