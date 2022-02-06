@@ -8,4 +8,4 @@ To play, all you need to do is enter the directory with the code, and call the f
 The code used to retrieve the set of words can be found in `word_gatherer.py`, and should work on any Unix-based machine.
 
 
-NOTE: at the moment, `words.txt` contains a lot of names.
+NOTE: at the moment, `words.txt` contains a lot of names, and other words that probably wouldn't show up in the actual game.
