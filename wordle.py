@@ -84,8 +84,8 @@ class MyWordle:
 
     def __print_guesses(self):
         ''' 
-        After a guess has been evaluated, the response stirngs 
-        of each guess is printed.
+        After a guess has been evaluated, the response string 
+        from each guess is printed.
         '''
         for guess in range(0,len(self.guesses)):
             print("          " + self.guesses_results[guess] + "  (" + self.guesses[guess] + ")")
