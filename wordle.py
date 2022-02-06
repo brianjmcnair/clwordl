@@ -103,6 +103,7 @@ class MyWordle:
         if self.has_won:
             print("Congratulations! You have correctly guessed the word!")
         else:
+            print ("The correct word was " + self.word)
             print("Better luck next time :(")
         print("")
         
