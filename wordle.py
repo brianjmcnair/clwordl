@@ -1,11 +1,15 @@
 #!/usr/bin/python
 
 import sys
+import random
+
+valid_words = []
+words_file = open('words.txt', 'r')
+valid_words = words_file.read().split()
 
 def get_word():
     ''' Retrieves word to be guessed for game. '''
-    # TODO - implement so that randomly selected word is used instead
-    return "wordl"
+    return random.choice(valid_words)
 
 def split(word):
     ''' Splits word into list of characters. '''
@@ -58,7 +62,6 @@ class MyWordle:
         Prompts the user for a word guess until a valid entry
         is received. 
         '''
-        # TODO - add to validity check by confirming entered word is a possible word
         is_valid = False
         while not is_valid:
             print("")
@@ -72,6 +75,9 @@ class MyWordle:
                 is_valid = False
                 print("")
                 print(guess + " has already been guessed. You might want to try a different word :)")
+            if guess not in valid_words:
+                is_valid = False
+                print(guess + " is not in the list of possible words. Please try a different guess.")
         self.guesses.append(guess)
         self.__increment_count()
         return self.__evaluate_guess(guess)

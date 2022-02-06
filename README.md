@@ -4,3 +4,5 @@ To play, all you need to do is enter the directory with the code, and call the f
 ```
 ./play
 ```
+
+The code used to retrieve the set of words can be found in `word_gatherer.py`, and should work on any Unix-based machine!
